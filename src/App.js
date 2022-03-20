@@ -1,17 +1,7 @@
 import {
   Center,
-  Text,
   Heading,
   VStack,
-  Button,
-  Input,
-  HStack,
-  Container,
-  SimpleGrid,
-  Image,
-  Spinner,
-  Box,
-  Badge,
   Tabs,
   TabList,
   Tab,
@@ -23,8 +13,6 @@ import { useState, useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import Discover from "./components/Discover";
 import Library from "./components/Library";
-
-const API_KEY = "AIzaSyAh_wYYhUBzBz8DJaNAgL-ejFeaLPJueqY";
 
 function App() {
   const [allBooks, setAllBooks] = useState([]);

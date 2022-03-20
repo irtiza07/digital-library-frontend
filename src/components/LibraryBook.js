@@ -4,26 +4,10 @@ import {
   Heading,
   VStack,
   Button,
-  Input,
-  HStack,
-  Container,
-  SimpleGrid,
   Image,
-  Spinner,
-  Box,
-  Badge,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  TabPanels,
   useToast,
 } from "@chakra-ui/react";
 import ReactStars from "react-rating-stars-component";
-
-import { useState, useEffect } from "react";
-
-const VALID_RATINGS = [1, 2, 3, 4, 5];
 
 export default function LibraryBook({ book, fetchData }) {
   const bookMovedToast = useToast();
@@ -95,10 +79,10 @@ export default function LibraryBook({ book, fetchData }) {
       <Center>
         <Heading size="sm">{book.title}</Heading>
       </Center>
-      {book.state == 0 && !book.rating && (
+      {book.state === 0 && !book.rating && (
         <Text fontSize="sm"> Rate Book? </Text>
       )}
-      {book.state == 0 && (
+      {book.state === 0 && (
         <ReactStars
           count={5}
           onChange={(new_rating) => ratingChanged(new_rating, book)}
@@ -107,7 +91,7 @@ export default function LibraryBook({ book, fetchData }) {
           value={book.rating}
         />
       )}
-      {book.state == 1 && (
+      {book.state === 1 && (
         <Button
           variant="outline"
           colorScheme="red"
@@ -117,7 +101,7 @@ export default function LibraryBook({ book, fetchData }) {
           Completed Book?
         </Button>
       )}
-      {book.state == 2 && (
+      {book.state === 2 && (
         <Button
           variant="outline"
           colorScheme="red"

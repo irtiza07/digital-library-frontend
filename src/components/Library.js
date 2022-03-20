@@ -1,25 +1,5 @@
-import {
-  Center,
-  Text,
-  Heading,
-  VStack,
-  Button,
-  Input,
-  HStack,
-  Container,
-  SimpleGrid,
-  Image,
-  Spinner,
-  Box,
-  Badge,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  TabPanels,
-} from "@chakra-ui/react";
+import { Text, Heading, VStack, SimpleGrid } from "@chakra-ui/react";
 
-import { useState, useEffect } from "react";
 import LibraryBook from "./LibraryBook";
 
 export default function Library({ allBooks, refreshData }) {
@@ -36,6 +16,8 @@ export default function Library({ allBooks, refreshData }) {
           allBooks.map((book) => {
             if (book.state === 0) {
               return <LibraryBook book={book} fetchData={refreshData} />;
+            } else {
+              return null;
             }
           })}
       </SimpleGrid>
@@ -45,6 +27,8 @@ export default function Library({ allBooks, refreshData }) {
           allBooks.map((book) => {
             if (book.state === 1) {
               return <LibraryBook book={book} fetchData={refreshData} />;
+            } else {
+              return null;
             }
           })}
       </SimpleGrid>
@@ -54,6 +38,8 @@ export default function Library({ allBooks, refreshData }) {
           allBooks.map((book) => {
             if (book.state === 2) {
               return <LibraryBook book={book} fetchData={refreshData} />;
+            } else {
+              return null;
             }
           })}
       </SimpleGrid>

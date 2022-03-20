@@ -6,23 +6,14 @@ import {
   Button,
   Input,
   HStack,
-  Container,
   SimpleGrid,
   Image,
-  IconButton,
-  Spinner,
-  Box,
   Badge,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  TabPanels,
   useToast,
 } from "@chakra-ui/react";
-import { PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const API_KEY = "AIzaSyAh_wYYhUBzBz8DJaNAgL-ejFeaLPJueqY";
 
@@ -60,7 +51,7 @@ export default function Discover({ refreshData }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        refreshData()
+        refreshData();
         bookAddedToast({
           title: "Added",
           description: "Book added to wishlist",
